@@ -18,6 +18,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="isbn"/>
                         <field name="author_ids" widget="many2many_tags"/>
                     </group>
                 </sheet>

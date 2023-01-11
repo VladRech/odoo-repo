@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record id="paperformat_lowmargin" model="report.paperformat">
+            <field name="name">European A4 low margin</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">1</field>
+            <field name="margin_left">1</field>
+            <field name="margin_right">1</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="action_report_books"
+            string="Books Report"
+            model="new.lib.book"
+            report_type="qweb-html"
+            file="new_library.report_book"
+            name="new_library.report_book"
+            paperformat="paperformat_lowmargin"
+            print_report_name="'Book - %s' % (object.name)"
+        />
+
+        <report
+            id="action_report_authors"
+            string="Authors Report"
+            model="new.lib.author"
+            report_type="qweb-html"
+            file="new_library.report_author"
+            name="new_library.report_author"
+            paperformat="paperformat_lowmargin"
+            print_report_name="'Author - %s' % (object.name)"
+        />
+
+<!--        <record id="action_report_books" model="ir.actions.report">-->
+<!--            <field name="name">Books Report</field>-->
+<!--            <field name="model">new.lib.book</field>-->
+<!--            <field name="report_type">qweb-html</field>-->
+<!--            <field name="report_name">new_library.report_book</field>-->
+<!--            <field name="report_file">new_library.report_book</field>-->
+<!--&lt;!&ndash;            <field name="paperformat">paperformat_lowmargin"</field>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="binding_model_id" ref="new.lib.book"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="binding_type">report</field>&ndash;&gt;-->
+<!--        </record>-->
+
+<!--        <record id="action_report_authors" model="ir.actions.report">-->
+<!--            <field name="name">Authors Report</field>-->
+<!--            <field name="model">new.lib.author</field>-->
+<!--            <field name="report_type">qweb-html</field>-->
+<!--            <field name="report_name">new_library.report_author</field>-->
+<!--            <field name="report_file">new_library.report_author</field>-->
+<!--        </record>-->
+
+
+
+    </data>
+</odoo>
