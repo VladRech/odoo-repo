@@ -10,11 +10,14 @@
     'external_dependencies': {'python': [], },
     "qweb": [],
     "data": [
-        "security/ir.model.access.csv",
+        'security/ir.model.access.csv',
         'views/menu.xml',
         'views/book.xml',
         'views/author.xml',
+        'report/models_reports_templates.xml',
+        'report/models_report.xml',
     ],
+    'demo': ['data/demo.xml',],
     'installable': True,
     'auto_install': False,
     # 'images': [
