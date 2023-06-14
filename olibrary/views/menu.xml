@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <menuitem id="olib_main_menu"
-           name="Library" sequence="100"/>
+            name="Okan_Library" sequence="100"/>
   <menuitem id="olib_catalog_menu"
            parent="olib_main_menu"
            name="Catalog" sequence="200"/>

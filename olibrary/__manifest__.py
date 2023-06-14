@@ -1,6 +1,6 @@
 {
     "name": "Okan' Library",
-    "summary": "Learning Odoo Community Add-Ons",
+    "summary": "Learning Odoo Community Add-Ons Views",
     "author": "Andrij Okan'",
     'website': "https://letu.lviv.ua",
     "category": "Education",
