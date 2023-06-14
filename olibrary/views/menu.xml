@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="lib_main_menu"
+           name="Library" sequence="100"/>
+  <menuitem id="lib_catalog_menu"
+           parent="lib_main_menu"
+           name="Catalog" sequence="200"/>
+</odoo>
