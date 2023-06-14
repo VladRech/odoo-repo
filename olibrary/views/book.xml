@@ -9,6 +9,7 @@
             </tree>
         </field>
     </record>
+
     <record id="olib_book_form" model="ir.ui.view">
         <field name="name">olib.book.form ()</field>
         <field name="model">olib.book</field>
@@ -25,11 +26,31 @@
             </form>
         </field>
     </record>
+
+    <record id="olib_book_kanban" model="ir.ui.view">
+        <field name="model">olib.book</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="isbn"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <a type="open">
+                                <field name="name" />
+                            </a>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="olib_book_act_window" model="ir.actions.act_window">
         <field name="name">Book</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">olib.book</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
     <menuitem id="olib_book_menu"
            action="olib_book_act_window"
