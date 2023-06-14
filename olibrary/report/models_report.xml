@@ -19,10 +19,10 @@
         <report
             id="action_report_books"
             string="Books Report"
-            model="lib.book"
+            model="olib.book"
             report_type="qweb-html"
-            file="library.report_book"
-            name="library.report_book"
+            file="olibrary.report_book"
+            name="olibrary.report_book"
             paperformat="paperformat_lowmargin"
             print_report_name="'Book - %s' % (object.name)"
         />
@@ -30,10 +30,10 @@
         <report
             id="action_report_authors"
             string="Authors Report"
-            model="lib.author"
+            model="olib.author"
             report_type="qweb-html"
-            file="library.report_author"
-            name="library.report_author"
+            file="olibrary.report_author"
+            name="olibrary.report_author"
             paperformat="paperformat_lowmargin"
             print_report_name="'Author - %s' % (object.name)"
         />

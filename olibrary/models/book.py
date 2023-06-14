@@ -4,11 +4,11 @@ _logger = logging.getLogger(__name__)
 
 
 class Book(models.Model):
-    _name = 'lib.book'
+    _name = 'olib.book'
     _description = 'Book'
     _order = 'name'
     name = fields.Char()
     active = fields.Boolean(default=True,)
     isbn = fields.Char()
     author_ids = fields.Many2many(
-        comodel_name='lib.author', )
+        comodel_name='olib.author', )

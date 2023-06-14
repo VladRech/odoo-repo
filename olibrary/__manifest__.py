@@ -1,7 +1,7 @@
 {
-    "name": "Library",
+    "name": "Okan' Library",
     "summary": "Learning Odoo Community Add-Ons",
-    "author": "Vladyslav Rechleckyj",
+    "author": "Andrij Okan'",
     'website': "https://letu.lviv.ua",
     "category": "Education",
     "version": "15.0.1.0.0",

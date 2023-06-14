@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="lib_book_tree" model="ir.ui.view">
-        <field name="name">lib.book.tree ()</field>
-        <field name="model">lib.book</field>
+    <record id="olib_book_tree" model="ir.ui.view">
+        <field name="name">olib.book.tree ()</field>
+        <field name="model">olib.book</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
             </tree>
         </field>
     </record>
-    <record id="lib_book_form" model="ir.ui.view">
-        <field name="name">lib.book.form ()</field>
-        <field name="model">lib.book</field>
+    <record id="olib_book_form" model="ir.ui.view">
+        <field name="name">olib.book.form ()</field>
+        <field name="model">olib.book</field>
         <field name="arch" type="xml">
             <form>
                 <header></header>
@@ -25,14 +25,14 @@
             </form>
         </field>
     </record>
-    <record id="lib_book_act_window" model="ir.actions.act_window">
+    <record id="olib_book_act_window" model="ir.actions.act_window">
         <field name="name">Book</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">lib.book</field>
+        <field name="res_model">olib.book</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="lib_book_menu"
-           action="lib_book_act_window"
-           parent="lib_catalog_menu"
+    <menuitem id="olib_book_menu"
+           action="olib_book_act_window"
+           parent="olib_catalog_menu"
            name="Books" sequence="300"/>
 </odoo>

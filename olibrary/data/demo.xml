@@ -1,47 +1,47 @@
 <odoo>
     <!-- Модель  Author -->
-    <record id="knuth_donald" model="lib.author">
+    <record id="knuth_donald" model="olib.author">
         <field name="name">Кнут Д.</field>
     </record>
-    <record id="aho_alfred" model="lib.author">
+    <record id="aho_alfred" model="olib.author">
         <field name="name">Ахо А.</field>
     </record>
-    <record id="hopcroft_john" model="lib.author">
+    <record id="hopcroft_john" model="olib.author">
         <field name="name">Хопкрофт Дж.</field>
     </record>
-    <record id="ullman_jeffrey" model="lib.author">
+    <record id="ullman_jeffrey" model="olib.author">
         <field name="name">Ульман Дж.</field>
     </record>
-    <record id="yourdon_edward" model="lib.author">
+    <record id="yourdon_edward" model="olib.author">
         <field name="name">Йодан Э.</field>
     </record>
-    <record id="stephen_kleene" model="lib.author">
+    <record id="stephen_kleene" model="olib.author">
         <field name="name">Клини С.</field>
     </record>
 
     <!-- Модель Book -->
-    <record id="design_and_analysis" model="lib.book">
+    <record id="design_and_analysis" model="olib.book">
         <field name="name">Построение и анализ вычислительных алгоритмов</field>
         <field name="isbn">123456780</field>
         <field name="author_ids" eval="[(6, 0, [ref('hopcroft_john'),
             ref('aho_alfred'), ref('ullman_jeffrey')])]" />
     </record>
-    <record id="art_computer_programming_vol1" model="lib.book">
+    <record id="art_computer_programming_vol1" model="olib.book">
         <field name="name">Искусство программирования для ЭВМ. Том 1: Основные алгоритмы</field>
         <field name="isbn">123456781</field>
         <field name="author_ids" eval="[(6, 0, [ref('knuth_donald')])]" />
     </record>
-    <record id="art_computer_programming_vol2" model="lib.book">
+    <record id="art_computer_programming_vol2" model="olib.book">
         <field name="name">Искусство программирования для ЭВМ. Том 2: Получисленные алгоритмы</field>
         <field name="isbn">123456782</field>
         <field name="author_ids" eval="[(6, 0, [ref('knuth_donald')])]" />
     </record>
-    <record id="art_computer_programming_vol3" model="lib.book">
+    <record id="art_computer_programming_vol3" model="olib.book">
         <field name="name">Искусство программирования для ЭВМ. Том 3: Сортировка и поиск</field>
         <field name="isbn">123456783</field>
         <field name="author_ids" eval="[(6, 0, [ref('knuth_donald')])]" />
     </record>
-    <record id="program_structure" model="lib.book">
+    <record id="program_structure" model="olib.book">
         <field name="name">Структурное проектирование и конструирование программ</field>
         <field name="isbn">123456784</field>
         <field name="author_ids" eval="[(6, 0, [ref('yourdon_edward')])]" />
