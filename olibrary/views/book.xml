@@ -37,7 +37,8 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_card">
                             <a type="open">
-                                <field name="name" />
+                                <field name="name"/>
+                                <p>ISBN: <field name="isbn"/></p>
                             </a>
                         </div>
                     </t>

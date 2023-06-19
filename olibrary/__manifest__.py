@@ -20,10 +20,10 @@
     'demo': ['data/demo.xml',],
     'installable': True,
     'auto_install': False,
-    # 'images': [
+    'images': [
     #            'static/description/books.png',
-    #            'static/description/icon.png',
-    #            ],
+                'static/description/icon.png',
+              ],
     'price': 0,
     'currency': 'EUR',
 }
