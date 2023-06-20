@@ -21,8 +21,8 @@
     'installable': True,
     'auto_install': False,
     'images': [
-    #            'static/description/books.png',
-                'static/description/icon.png',
+               # 'static/Knuth_v1.png',
+               'static/description/icon.png',
               ],
     'price': 0,
     'currency': 'EUR',

@@ -10,5 +10,7 @@ class Book(models.Model):
     name = fields.Char()
     active = fields.Boolean(default=True,)
     isbn = fields.Char()
+    nauthors = fields.Integer()
     author_ids = fields.Many2many(
         comodel_name='olib.author', )
+    cover = fields.Image(string='Book Cover')

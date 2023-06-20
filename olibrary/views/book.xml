@@ -6,6 +6,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="isbn"/>
+                <field name="nauthors"/>
             </tree>
         </field>
     </record>
@@ -20,7 +22,11 @@
                     <group>
                         <field name="name"/>
                         <field name="isbn"/>
+                        <field name="nauthors"/>
                         <field name="author_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="cover" widget="image" class="oe_left oe_avatar"/>
                     </group>
                 </sheet>
             </form>
@@ -33,13 +39,22 @@
             <kanban>
                 <field name="name"/>
                 <field name="isbn"/>
+                <field name="nauthors"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_card">
-                            <a type="open">
-                                <field name="name"/>
-                                <p>ISBN: <field name="isbn"/></p>
-                            </a>
+<!--                        <div t-attf-class="#{kanban_color(3)}">-->
+                        <div t-attf-class="#{kanban_color(record.nauthors.raw_value)}">
+                            <div class="oe_kanban_card">
+                                <div class="o_kanban_image">
+                                    <field name="cover" widget="image" class="oe_avatar"/>
+                                </div>
+                                <div>
+                                    <a type="open">
+                                        <field name="name"/>
+                                        <p>ISBN: <field name="isbn"/></p>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </t>
                 </templates>
