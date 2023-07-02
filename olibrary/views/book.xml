@@ -25,9 +25,6 @@
                         <field name="nauthors"/>
                         <field name="author_ids" widget="many2many_tags"/>
                     </group>
-                    <group>
-                        <field name="cover" widget="image" class="oe_left oe_avatar"/>
-                    </group>
                 </sheet>
             </form>
         </field>

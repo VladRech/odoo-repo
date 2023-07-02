@@ -2,14 +2,19 @@
     <template id="report_book">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
+                <span t-esc="doc_index + 1"/>
+                .
                 <t t-foreach="doc.author_ids" t-as="id_author">
                     <span t-esc="id_author.name"/>
                     <t t-if="id_author_last"/><t t-else="">
                         ,
                     </t>
                 </t>
-                <p><span t-esc="doc.name"/></p>
-                <t t-if="doc_last"/><t t-else="">
+<!--                <p><span t-esc="doc.name"/></p>-->
+                <span t-esc="doc.name"/>
+                <p></p>
+<!--                <t t-if="doc_last"/><t t-else="">-->
+                <t t-if="doc_last">
                     <p>--------------------------------------</p>
                 </t>
             </t>
