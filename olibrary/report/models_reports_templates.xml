@@ -10,10 +10,8 @@
                         ,
                     </t>
                 </t>
-<!--                <p><span t-esc="doc.name"/></p>-->
                 <span t-esc="doc.name"/>
                 <p></p>
-<!--                <t t-if="doc_last"/><t t-else="">-->
                 <t t-if="doc_last">
                     <p>--------------------------------------</p>
                 </t>
@@ -23,24 +21,48 @@
 
     <template id="report_author">
         <t t-call="web.html_container">
+            <t t-if="user.lang == 'en_US'">
+                <t t-set="no_books">
+                    There are no books by this author in the library.
+                </t>
+                <t t-set="has_books">
+                    There are books by this author in the library
+                </t>
+            </t>
+            <t t-elif="user.lang == 'uk_UA'">
+                <t t-set="no_books">
+                    В бібліотеці немає книг цього автора.
+                </t>
+                <t t-set="has_books">
+                    В бібліотеці є книги цього автора
+                </t>
+            </t>
+            <t t-else="">
+                <t t-set="no_books">
+                    В библиотеке нет книг этого автора.
+                </t>
+                <t t-set="has_books">
+                    В библиотеке есть книги этого автора
+                </t>
+            </t>
+
             <t t-foreach="docs" t-as="doc">
                 <p><span t-esc="doc.name"/></p>
-<!--                <t t-if="doc_size == 1">-->
-                    <t t-if="doc.book_ids"/><t t-else="">
-<!--                        <br/><br/>-->
-                        В бібліотеці немає книг цього автора.
+                <t t-if="doc.book_ids"/><t t-else="">
+                    <p>
+                        <t t-out="no_books"/>
+                    </p>
+                </t>
+                <t t-foreach="doc.book_ids" t-as="id_book">
+                    <t t-if="id_book_index == 0">
+                        <t t-out="has_books"/>
+                        (<span t-esc="id_book_size"/>):
+                        <br/><br/>
                     </t>
-                    <t t-foreach="doc.book_ids" t-as="id_book">
-                        <t t-if="id_book_index == 0">
-<!--                            <br/><br/>-->
-                            В бібліотеці є книги автора (<span t-esc="id_book_size"/>):
-                            <br/><br/>
-                        </t>
-                        <ul>
-                            <li><span t-esc="id_book.name"/></li>
-                        </ul>
-                    </t>
-<!--                </t>-->
+                    <ul>
+                        <li><span t-esc="id_book.name"/></li>
+                    </ul>
+                </t>
                 <t t-if="doc_last"/><t t-else="">
                     <p>--------------------------------------</p>
                 </t>
