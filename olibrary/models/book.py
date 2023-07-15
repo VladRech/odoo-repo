@@ -14,3 +14,7 @@ class Book(models.Model):
     author_ids = fields.Many2many(
         comodel_name='olib.author', )
     cover = fields.Image(string='Book Cover')
+    publisher_id = fields.Many2one(
+        'res.partner', string='Publisher',
+        ondelete='set null',)
+

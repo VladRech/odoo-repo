@@ -24,6 +24,7 @@
                         <field name="isbn"/>
                         <field name="nauthors"/>
                         <field name="author_ids" widget="many2many_tags"/>
+                        <field name="publisher_id"/>
                     </group>
                 </sheet>
             </form>

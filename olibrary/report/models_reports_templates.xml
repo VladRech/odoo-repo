@@ -1,7 +1,9 @@
 <odoo>
     <template id="report_book">
         <t t-call="web.html_container">
+            <p><t t-out="user.id"/></p>
             <t t-foreach="docs" t-as="doc">
+                <!-- doc - це книга -->
                 <span t-esc="doc_index + 1"/>
                 .
                 <t t-foreach="doc.author_ids" t-as="id_author">
@@ -21,51 +23,60 @@
 
     <template id="report_author">
         <t t-call="web.html_container">
-            <t t-if="user.lang == 'en_US'">
-                <t t-set="no_books">
-                    There are no books by this author in the library.
-                </t>
-                <t t-set="has_books">
-                    There are books by this author in the library
-                </t>
-            </t>
-            <t t-elif="user.lang == 'uk_UA'">
+            <!--Переклад елементів фраз-->
+            <t t-if="user.lang == 'uk_UA'">
                 <t t-set="no_books">
                     В бібліотеці немає книг цього автора.
                 </t>
-                <t t-set="has_books">
-                    В бібліотеці є книги цього автора
+                <t t-set="has_books_1">
+                    В бібліотеці є
+                </t>
+                <t t-set="has_books_2">
+                    книг цього автора
                 </t>
             </t>
-            <t t-else="">
+            <t t-elif="user.lang == 'ru_RU'">
                 <t t-set="no_books">
                     В библиотеке нет книг этого автора.
                 </t>
-                <t t-set="has_books">
-                    В библиотеке есть книги этого автора
+                <t t-set="has_books_1">
+                    В библиотеке есть
+                </t>
+                <t t-set="has_books_2">
+                    книг этого автора
+                </t>
+            </t>
+            <t t-else="">
+                <!-- user.lang == 'en_US'-->
+                <t t-set="no_books">
+                    There are no books by this author in the library.
+                </t>
+                <t t-set="has_books_1">
+                    There are
+                </t>
+                <t t-set="has_books_2">
+                    books by this author in the library
                 </t>
             </t>
 
+            <!-- Об'єднання елементів фраз-->
             <t t-foreach="docs" t-as="doc">
+                <!-- doc - це автор -->
                 <p><span t-esc="doc.name"/></p>
                 <t t-if="doc.book_ids"/><t t-else="">
-                    <p>
-                        <t t-out="no_books"/>
-                    </p>
+                    <t t-out="no_books"/>
                 </t>
-                <t t-foreach="doc.book_ids" t-as="id_book">
-                    <t t-if="id_book_index == 0">
-                        <t t-out="has_books"/>
-                        (<span t-esc="id_book_size"/>):
-                        <br/><br/>
-                    </t>
-                    <ul>
+                <ul>
+                    <t t-foreach="doc.book_ids" t-as="id_book">
+                        <t t-if="id_book_index == 0">
+                            <t t-out="has_books_1"/>
+                            <span t-esc="id_book_size"/>
+                            <t t-out="has_books_2"/>
+                        </t>
                         <li><span t-esc="id_book.name"/></li>
-                    </ul>
-                </t>
-                <t t-if="doc_last"/><t t-else="">
-                    <p>--------------------------------------</p>
-                </t>
+                    </t>
+                </ul>
+                --------------------------------------
             </t>
         </t>
     </template>
