@@ -17,6 +17,9 @@
                     <header></header>
                     <sheet>
                         <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="full_name"/>
                             <field name="name"/>
                         </group>
                     </sheet>

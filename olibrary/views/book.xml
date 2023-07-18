@@ -18,6 +18,9 @@
         <field name="arch" type="xml">
             <form>
                 <header></header>
+                <button name="make_available" string="Make Available" type="object"/>
+                <button name="make_borrowed" string="Make Borrowed" type="object"/>
+                <button name="make_lost" string="Make Lost" type="object"/>
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -25,6 +28,8 @@
                         <field name="nauthors"/>
                         <field name="author_ids" widget="many2many_tags"/>
                         <field name="publisher_id"/>
+                        <field name="publisher_city"/>
+                        <field name="state" widget="statusbar"/>
                     </group>
                 </sheet>
             </form>
